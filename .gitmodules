@@ -1,0 +1,12 @@
+[submodule "Moonlight/MoonlightDependenciesassimp"]
+	path = Moonlight/MoonlightDependenciesassimp
+	url = https://github.com/assimp/assimp.git
+[submodule "Moonlight/Dependencies/assimp"]
+	path = Moonlight/Dependencies/assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "Moonlight/Dependencies/glfw"]
+	path = Moonlight/Dependencies/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "Moonlight/Dependencies/spdlog"]
+	path = Moonlight/Dependencies/spdlog
+	url = https://github.com/gabime/spdlog.git
