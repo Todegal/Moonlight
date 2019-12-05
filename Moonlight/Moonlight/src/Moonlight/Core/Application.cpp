@@ -1,6 +1,10 @@
 #include "../mlpch.h"
 #include "Application.h"
 
+#include <GLFW/glfw3.h>
+
+#include "Timestep.h"
+
 namespace ML
 {
 	Application* Application::s_Instance = nullptr;
@@ -21,6 +25,16 @@ namespace ML
 	{
 		while (m_Running)
 		{
+			float time = (float)glfwGetTime();
+			Timestep timestep = time - m_LastFrameTime;
+			m_LastFrameTime = time;
+
+			if (!m_Minimized)
+			{
+				for (Layer* layer : m_LayerStack)
+					layer->OnUpdate(timestep);
+			}
+
 			// Update the window
 			m_Window->OnUpdate();
 		}
@@ -32,7 +46,13 @@ namespace ML
 		dispatcher.Dispatch<WindowCloseEvent>(ML_BIND_EVENT_FN(Application::OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(ML_BIND_EVENT_FN(Application::OnWindowResize));
 
-		ML_TRACE(e.ToString());
+		// Pass the event through all the layers to handle it
+		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
+		{
+			(*it)->OnEvent(e);
+			if (e.Handled)
+				break
+		}
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)

@@ -30,6 +30,12 @@
     <ClCompile Include="src\Moonlight\Renderer\GraphicsContext.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Moonlight\Core\Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Moonlight\Core\LayerStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Moonlight\Core\Log.h">
@@ -66,6 +72,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Moonlight\Events\MouseEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moonlight\Core\Timestep.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moonlight\Core\Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Moonlight\Core\LayerStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
