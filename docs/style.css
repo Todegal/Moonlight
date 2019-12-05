@@ -1,0 +1,24 @@
+body {
+    background-color: #1f1c4c;
+}
+
+#title-block {
+     text-align: center;
+     margin-top: 5%;
+}
+
+#title {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 72px;
+    font-family: Courier New;
+    font-weihgt: bold;
+}
+
+#subtitle {
+    color: #ffffff;
+     text-decoration: none;
+    font-size: 24px;
+    font-family: Courier New;
+    font-weihgt: bold;
+}

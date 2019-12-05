@@ -16,4 +16,3 @@ copy /Y "$(OutDir)$(TargetName).lib" "$(SolutionDir)Dependencies\lib(x64)\$(Conf
 ```
 #### 5) Make a project which links to `Moonlight.lib` and paste `Moonlight.dll` into your executable folder
 #### 6) alternatively copy and rename the `Sandbox` project
-© Copyright Niall Townley 2019
