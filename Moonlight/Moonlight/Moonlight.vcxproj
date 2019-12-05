@@ -161,6 +161,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Moonlight\Core\Core.h" />
+    <ClInclude Include="src\Moonlight\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Moonlight\Events\Event.h" />
+    <ClInclude Include="src\Moonlight\Events\KeyEvent.h" />
+    <ClInclude Include="src\Moonlight\Events\MouseEvent.h" />
     <ClInclude Include="src\Moonlight\mlpch.h" />
     <ClInclude Include="src\Moonlight\Moonlight.h" />
     <ClInclude Include="src\Moonlight\Core\Application.h" />

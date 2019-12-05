@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Renderer/GraphicsContext.h"
+#include "../Events/Event.h"
 
 namespace ML {
 	// <summary> A struct which stores all the basic information about the window for easy window creation</summary>
@@ -30,6 +31,9 @@ namespace ML {
 		/// <summary> Called every frame updates the window and refreshes the graphics context </summary>
 		void OnUpdate();
 
+		using EventCallbackFn = std::function<void(Event&)>;
+		inline void SetEventCallback(const EventCallbackFn& callback) { m_Data.EventCallback = callback; }
+
 		void SetVSync(bool enabled);
 		bool GetVSync() const { return m_Data.VSync; }
 
@@ -48,6 +52,8 @@ namespace ML {
 			std::string Title;
 			unsigned int Width, Height;
 			bool VSync;
+
+			EventCallbackFn EventCallback;
 		} m_Data;
 
 		GLFWwindow* m_Window;

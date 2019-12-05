@@ -1,24 +1,33 @@
 #pragma once
 
 #include "Window.h"
+#include "../Events/ApplicationEvent.h"
 
 namespace ML
 {
-	class Application
+	class ML_API Application
 	{
 	public:
-		ML_API Application();
-		virtual ML_API ~Application();
+		Application();
+		virtual ~Application();
 
-		void ML_API Run();
+		void Run();
 
-		inline static ML_API Application& Get() { return *s_Instance; }
+		void OnEvent(Event& e);
+
+		inline static Application& Get() { return *s_Instance; }
+
+	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+		bool OnWindowResize(WindowResizeEvent& e);
+
 	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 		bool m_Minimized = false;
+
 	private:
-		static ML_API Application* s_Instance;
+		static Application* s_Instance;
 	};
 
 	// Defined in CLIENT app
