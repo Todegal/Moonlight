@@ -99,7 +99,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>spdlog.lib;glad.lib;glfw3.lib;glew32s.lib;assimp.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>imgui.lib;spdlog.lib;glad.lib;glfw3.lib;glew32s.lib;assimp.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
       <AdditionalDependencies>glad.lib;glfw3.lib;assimp.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -135,7 +135,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>spdlog.lib;glad.lib;glfw3.lib;glew32s.lib;assimp.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>imgui.lib;spdlog.lib;glad.lib;glfw3.lib;glew32s.lib;assimp.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Lib>
       <AdditionalDependencies>glad.lib;glfw3.lib;assimp.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -147,6 +147,14 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../mlpch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="src\Moonlight\Core\LayerStack.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../mlpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../mlpch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="src\Moonlight\ImGui\ImGuiBuild.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../mlpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../mlpch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="src\Moonlight\ImGui\ImGuiLayer.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../mlpch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../mlpch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -177,6 +185,7 @@
     <ClInclude Include="src\Moonlight\Events\Event.h" />
     <ClInclude Include="src\Moonlight\Events\KeyEvent.h" />
     <ClInclude Include="src\Moonlight\Events\MouseEvent.h" />
+    <ClInclude Include="src\Moonlight\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Moonlight\mlpch.h" />
     <ClInclude Include="src\Moonlight\Moonlight.h" />
     <ClInclude Include="src\Moonlight\Core\Application.h" />
@@ -184,6 +193,7 @@
     <ClInclude Include="src\Moonlight\Core\Log.h" />
     <ClInclude Include="src\Moonlight\Core\Window.h" />
     <ClInclude Include="src\Moonlight\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Moonlight\Renderer\RenderCommand.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

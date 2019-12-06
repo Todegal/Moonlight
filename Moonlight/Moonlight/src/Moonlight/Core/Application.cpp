@@ -2,6 +2,7 @@
 #include "Application.h"
 
 #include <GLFW/glfw3.h>
+#include <imgui/imgui.h>
 
 #include "Timestep.h"
 
@@ -15,6 +16,9 @@ namespace ML
 		s_Instance = this;
 		m_Window = Window::Create();
 		m_Window->SetEventCallback(ML_BIND_EVENT_FN(Application::OnEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -35,9 +39,28 @@ namespace ML
 					layer->OnUpdate(timestep);
 			}
 
+			// Run ImGui
+			m_ImGuiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+				layer->OnImGuiRender();
+
+			ImGui::ShowDemoWindow();
+
+			m_ImGuiLayer->End();
+
 			// Update the window
 			m_Window->OnUpdate();
 		}
+	}
+
+	void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer* layer)
+	{
+		m_LayerStack.PushOverlay(layer);
 	}
 
 	void Application::OnEvent(Event& e)
@@ -51,7 +74,7 @@ namespace ML
 		{
 			(*it)->OnEvent(e);
 			if (e.Handled)
-				break
+				break;
 		}
 	}
 
