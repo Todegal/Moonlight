@@ -1,12 +1,13 @@
 [submodule "Moonlight/Dependencies/glm"]
 	path = Moonlight/vendor/glm
 	url = https://github.com/g-truc/glm.git
-[submodule "Moonlight/vendor/GLFW"]
-	path = Moonlight/vendor/GLFW
-	url = https://github.com/Todegal/glfw.git
 [submodule "Moonlight/vendor/imgui"]
 	path = Moonlight/vendor/imgui
 	url = https://github.com/Todegal/imgui.git
 [submodule "Moonlight/vendor/spdlog"]
 	path = Moonlight/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+
+[submodule "Moonlight/vendor/GLFW"]
+	path = Moonlight/vendor/GLFW
+	url = https://github.com/Todegal/glfw.git
