@@ -10,3 +10,6 @@
 [submodule "Moonlight/vendor/GLFW"]
 	path = Moonlight/vendor/GLFW
 	url = https://github.com/Todegal/glfw.git
+[submodule "Moonlight/vendor/glm"]
+	path = Moonlight/vendor/glm
+	url = https://github.com/g-truc/glm.git
