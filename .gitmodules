@@ -7,3 +7,6 @@
 [submodule "Moonlight/vendor/spdlog"]
 	path = Moonlight/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Moonlight/GLFW"]
+	path = Moonlight/GLFW
+	url = https://github.com/Todegal/glfw.git
