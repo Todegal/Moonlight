@@ -1,6 +1,7 @@
 #include "mlpch.h"
 #include "Window.h"
 
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 #include "../Events/ApplicationEvent.h"
@@ -175,6 +176,8 @@ namespace ML {
 	{
 		glfwPollEvents();
 		m_Context->SwapBuffers();
+
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
 	void Window::SetVSync(bool enabled)
