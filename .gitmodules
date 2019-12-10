@@ -3,7 +3,7 @@
 	url = https://github.com/g-truc/glm.git
 [submodule "Moonlight/vendor/imgui"]
 	path = Moonlight/vendor/imgui
-	url = https://github.com/ocornut/imgui.git
+	url = https://github.com/Todegal/imgui.git
 	branch = docking
 [submodule "Moonlight/vendor/spdlog"]
 	path = Moonlight/vendor/spdlog
