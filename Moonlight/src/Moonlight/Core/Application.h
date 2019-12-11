@@ -9,7 +9,7 @@
 
 namespace ML
 {
-	class ML_API Application
+	class Application
 	{
 	public:
 		Application();

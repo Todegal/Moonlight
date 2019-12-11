@@ -5,7 +5,7 @@ struct GLFWwindow;
 namespace ML
 {
 	/// <summary> Maintains data on the current state of the rendering API </summary>
-	class ML_API GraphicsContext
+	class GraphicsContext
 	{
 	public:
 		GraphicsContext(GLFWwindow* windowHandle);

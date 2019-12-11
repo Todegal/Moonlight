@@ -20,7 +20,7 @@ namespace ML {
 	};
 
 	/// <summary> Creates a window </summary>
-	class ML_API Window
+	class Window
 	{
 	public:
 		Window(const WindowProps& props);

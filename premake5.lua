@@ -10,7 +10,7 @@ workspace "Moonlight"
 
 IncludeDir = {}
 IncludeDir["Glad"] = "Moonlight/vendor/Glad/include"
-IncludeDir["glm"] = "Moonlight/vendor/glm/include"
+IncludeDir["glm"] = "Moonlight/vendor/glm"
 IncludeDir["GLFW"] = "Moonlight/vendor/GLFW/include"
 IncludeDir["imgui"] = "Moonlight/vendor/imgui/"
 
@@ -105,6 +105,7 @@ project "Sandbox"
 	{
 		"Moonlight/vendor/spdlog/include",
 		"Moonlight/src",
+		"%{IncludeDir.Glad}",
 		"%{IncludeDir.glm}"
 	}
 

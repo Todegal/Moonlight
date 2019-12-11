@@ -15,8 +15,6 @@
 
 #include <Windows.h>
 
-#define ML_API __declspec(dllexport)
-
 #include "Moonlight/Core/Core.h"
 
 #include "Moonlight/Core/Log.h"

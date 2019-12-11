@@ -5,7 +5,10 @@
 #include <examples/imgui_impl_glfw.h>
 #include <examples/imgui_impl_opengl3.h>
 
-#include "../Core/Application.h"
+#include "Moonlight/Core/Application.h"
+
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
 
 namespace ML
 {
@@ -30,7 +33,13 @@ namespace ML
 		// Setup Dear ImGui Style
 		ImGui::StyleColorsDark();
 
+		// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
 		ImGuiStyle& style = ImGui::GetStyle();
+		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+		{
+			//style.WindowRounding = 0.0f;
+			//style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+		}
 
 		Application& app = Application::Get();
 		GLFWwindow* window = static_cast<GLFWwindow*>(app.GetWindow().GetWindowPointer());
@@ -63,5 +72,13 @@ namespace ML
 		// Rendering
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+		{
+			GLFWwindow* backup_current_context = glfwGetCurrentContext();
+			ImGui::UpdatePlatformWindows();
+			ImGui::RenderPlatformWindowsDefault();
+			glfwMakeContextCurrent(backup_current_context);
+		}
 	}
 }

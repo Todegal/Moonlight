@@ -1,7 +1,5 @@
 #pragma once
 
-#define ML_API __declspec(dllimport)
-
 #include "Moonlight/Core/Core.h"
 
 #include "Moonlight/Core/Log.h"

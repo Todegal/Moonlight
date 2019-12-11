@@ -7,7 +7,7 @@
 
 namespace ML
 {
-	class ML_API LayerStack
+	class LayerStack
 	{
 	public:
 		LayerStack() = default;

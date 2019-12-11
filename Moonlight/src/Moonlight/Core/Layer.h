@@ -6,7 +6,7 @@
 
 namespace ML
 {
-	class ML_API Layer
+	class Layer
 	{
 	public:
 		Layer(const std::string& name = "Layer");
