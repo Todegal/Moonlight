@@ -21,7 +21,7 @@ group "Dependencies"
 group ""
 
 project "Moonlight"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "on"
