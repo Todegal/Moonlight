@@ -6,3 +6,4 @@
 #include "Moonlight/Core/Application.h"
 #include "Moonlight/Core/Window.h"
 #include "Moonlight/Core/Layer.h"
+#include "Moonlight/Renderer/RenderCommand.h"

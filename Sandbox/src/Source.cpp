@@ -1,20 +1,31 @@
+#include <imgui.h>
+
 #include <Moonlight.h>
 #include <Moonlight\Core\EntryPoint.h>
 
-#include <glm\vec3.hpp>
-
 class TestLayer : public ML::Layer
 {
-private:
-	glm::vec3
+public:
+	TestLayer() :
+		ML::Layer("Tets Layer")
+	{
+	}
+
+	void OnImGuiRender()
+	{
+	}
+
+	void OnUpdate(ML::Timestep ts)
+	{
+	}
 };
 
 class Sandbox : public ML::Application
 {
-	:
 public:
 	Sandbox()
 	{
+		PushOverlay(new TestLayer());
 	}
 
 	~Sandbox()

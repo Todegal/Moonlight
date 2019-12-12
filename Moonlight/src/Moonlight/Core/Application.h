@@ -6,6 +6,7 @@
 #include "../Events/KeyEvent.h"
 
 #include "../ImGui/ImGuiLayer.h"
+#include "../DeveloperLayer/DeveloperLayer.h"
 
 namespace ML
 {
@@ -37,6 +38,10 @@ namespace ML
 		bool m_Minimized = false;
 		LayerStack m_LayerStack;
 		float m_LastFrameTime = 0.0f;
+
+#ifdef ML_DEBUG
+		DeveloperLayer* m_DevLayer;
+#endif // ML_DEBUG
 
 	private:
 		static Application* s_Instance;

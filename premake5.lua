@@ -105,7 +105,7 @@ project "Sandbox"
 	{
 		"Moonlight/vendor/spdlog/include",
 		"Moonlight/src",
-		"%{IncludeDir.Glad}",
+		"%{IncludeDir.imgui}",
 		"%{IncludeDir.glm}"
 	}
 

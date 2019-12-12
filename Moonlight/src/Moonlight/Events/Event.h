@@ -4,13 +4,13 @@
 
 namespace ML
 {
-	enum class EventType
+	enum EventType
 	{
-		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
 		KeyPressed, KeyReleased, KeyTyped,
-		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
+		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled,
+		NumEvents
 	};
 
 	enum EventCategory
@@ -29,6 +29,23 @@ namespace ML
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
+#define GET_EVENTS(disc) \
+	disc("WindowClose", EventType::WindowClose, WindowCloseEvent) \
+	disc("WindowResize", EventType::WindowResize, WindowResizeEvent) \
+	disc("WindowFocus", EventType::WindowFocus, WindowFocusEvent) \
+	disc("WindowLostFocus", EventType::WindowLostFocus, WindowLostFocusEvent) \
+	disc("WindowMoved", EventType::WindowMoved, WindowMovedEvent) \
+	disc("AppTick", EventType::AppTick, AppTickEvent) \
+	disc("AppUpdate", EventType::AppUpdate, AppUpdateEvent) \
+	disc("AppRender", EventType::AppRender, AppRenderEvent) \
+	disc("KeyPressed", EventType::KeyPressed, KeyPressedEvent) \
+	disc("KeyReleased", EventType::KeyReleased, KeyReleasedEvent) \
+	disc("KeyTyped", EventType::KeyTyped, KeyTypedEvent) \
+	disc("MouseButtonPressed", EventType::MouseButtonPressed, MouseButtonPressedEvent) \
+	disc("MouseButtonReleased", EventType::MouseButtonReleased, MouseButtonReleasedEvent) \
+	disc("MouseMoved", EventType::MouseMoved, MouseMovedEvent) \
+	disc("MouseScrolled", EventType::MouseScrolled, MouseScrolledEvent) \
+
 	class Event
 	{
 	public:
@@ -45,7 +62,6 @@ namespace ML
 		}
 	};
 
-	/// <summary>
 	class EventDispatcher
 	{
 	public:

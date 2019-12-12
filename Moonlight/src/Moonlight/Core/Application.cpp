@@ -19,6 +19,11 @@ namespace ML
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
+
+#ifdef ML_DEBUG
+		m_DevLayer = new DeveloperLayer();
+		PushOverlay(m_DevLayer);
+#endif
 	}
 
 	Application::~Application()
@@ -44,7 +49,7 @@ namespace ML
 			for (Layer* layer : m_LayerStack)
 				layer->OnImGuiRender();
 
-			ImGui::ShowDemoWindow();
+			//ImGui::ShowDemoWindow();
 
 			m_ImGuiLayer->End();
 

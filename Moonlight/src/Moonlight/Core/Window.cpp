@@ -159,6 +159,15 @@ namespace ML {
 				data.EventCallback(event);
 			}
 		);
+
+		glfwSetWindowPosCallback(m_Window, [](GLFWwindow* window, int xPos, int yPos)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+				WindowMovedEvent event(xPos, yPos);
+				data.EventCallback(event);
+			}
+		);
 	}
 
 	void Window::Shutdown()
