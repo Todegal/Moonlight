@@ -70,9 +70,8 @@ namespace ML
 
 	void Application::OnEvent(Event& e)
 	{
-		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(ML_BIND_EVENT_FN(Application::OnWindowClose));
-		dispatcher.Dispatch<WindowResizeEvent>(ML_BIND_EVENT_FN(Application::OnWindowResize));
+		e.Dispatch<WindowCloseEvent>(ML_BIND_EVENT_FN(Application::OnWindowClose));
+		e.Dispatch<WindowResizeEvent>(ML_BIND_EVENT_FN(Application::OnWindowResize));
 
 		// Pass the event through all the layers to handle it
 		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
